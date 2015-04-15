@@ -23,4 +23,6 @@ app.get('/template', function (req, res) {
 });
 
 
-app.listen(8006);
+app.listen(8006,function(){
+    console.log('Collie-UI is listening at port 8006.')
+});
