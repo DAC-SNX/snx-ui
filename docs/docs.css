@@ -69,19 +69,25 @@ section {
     padding: 0;
     list-style: none;
 }
-#detail a {
+#detail a,
+#detail #det a{
     font-family: inherit;
     display: inline-flex;
-    margin: -8px 0 -8px -24px;
-    padding: 8px 0 9px 24px;
-    width: 100%;
+    width: 86%;
+    height: 50%;
     color: #333;
     text-decoration: none;
     letter-spacing: 1px;
     font-size: 18px;
     transition: all 0.3s ease-in-out;
 }
-#detail a:hover{
+
+#detail #det a {
+    margin: -8px 0 -8px -24px;
+    padding: 8px 0 9px 24px;
+    width: 100%;
+}
+#detail #det a:hover{
     color: #2dcbff;
 }
 #detail li {
@@ -180,9 +186,9 @@ section {
 
 .yl {
     padding: 18px;
-    background-image: linear-gradient(45deg, #EE855F, #a3f7e6);
+    /*background-image: linear-gradient(45deg, #EE855F, #a3f7e6);*/
     /*background-image: linear-gradient(135deg, #5fa4ee, #a3f7e6);*/
-    /*background-image: linear-gradient(135deg, #5bcefb, #fc78fd);*/
+    background-image: linear-gradient(135deg, #5bcefb, #fc78fd);
 
 }
 .code .html{
