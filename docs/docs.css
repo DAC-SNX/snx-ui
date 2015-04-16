@@ -72,8 +72,9 @@ section {
 #detail a {
     font-family: inherit;
     display: inline-flex;
-    width: 86%;
-    height: 50%;
+    margin: -8px 0 -8px -24px;
+    padding: 8px 0 9px 24px;
+    width: 100%;
     color: #333;
     text-decoration: none;
     letter-spacing: 1px;
