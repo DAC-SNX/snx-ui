@@ -62,7 +62,7 @@ $(document).ready(function(){
     });
     $(document).bind('click',function(e){//点击空白区域隐藏弹出
         var target  = $(e.target);
-        if(target.closest('.dropdown-list').length == 0){
+        if(target.closest('.dropdown-list').length === 0){
             $('.dropdown-list').slideUp(200);
         }
         e.stopPropagation();
@@ -386,6 +386,16 @@ $(document).ready(function(){
 
 $(document).ready(function () {
 
+    $(document).bind('click',function(e){//点击空白区域隐藏弹出
+        var target  = $(e.target);
+        if(target.closest('.colors').length === 0){
+            $('.colors').hide(300);
+        }
+        if(target.closest('.calendar').length === 0){
+            $('.calendar').slideUp(300);
+        }
+        e.stopPropagation();
+    });
 //    样式覆盖
     var inputNumber = $('input[type="number"]');
     $('<div class="number"><input type="text" value="0"><div><div>▲</div><div>▼</div></div></div>')
@@ -457,23 +467,25 @@ $(document).ready(function () {
     for(var i = 0; i < 36; i++) {
         $('<span></span>').appendTo('.colors').css('background-color','rgb('+arrColor[i].r+','+arrColor[i].g+','+arrColor[i].b+')');
     }
-    $('<div><label></label></div>').appendTo('.colors');
+    $('<div></div>').appendTo('.colors');
 
     var theColor = $('.colors');
     theColor.hide();
-    $('.color').children('div:nth-child(2)').click(function(){
-        $(this).parent().find('.colors').toggle();
+    $('.color').children('div:nth-child(2)').click(function(e){
+        $(this).parent().find('.colors').toggle(300);
+        $('.calendar').slideUp(300);
+        e.stopPropagation();
     });
     theColor.children('span').click(function(){
         $(this).parents('.color').find('div:nth-child(1)').find('div').css('background-color',$(this).css('background-color'));
         $(this).parent().hide();
     }).mouseover(function(){
+        $(this).parent().find('div').append('<label></label>');
         var theLabel = $(this).parent().find('div label');
         theLabel.text('Choose color : '+$(this).css('background-color'));
         theLabel.css({'display':'inline-block'});
     }).mouseout(function () {
-        $(this).parent().find('div label').css({'display':'none'});
-        $(this).parent().find('div label').text('');
+        $(this).parent().find('div').text('');
     });
 
 //    date
@@ -491,10 +503,13 @@ $(document).ready(function () {
     var tYear = today.getFullYear();
     var tMonth = today.getMonth()+1;
     var tDate = today.getDate();
-    $('.date').find('input').attr('value',tMonth+'/'+tDate+'/'+tYear);
+    var theDate = $('.date');
+    theDate.find('input').attr('value',tMonth+'/'+tDate+'/'+tYear);
 
-    $('.date').find('input').click(function(){
-        $(this).parent().children('.calendar').toggle();
+    theDate.find('input').click(function(e){
+        $(this).parent().children('.calendar').slideToggle(300);
+        $('.colors').hide(300);
+        e.stopPropagation();
     });
 
     $.calPanel = function (date) {
@@ -520,7 +535,7 @@ $(document).ready(function () {
         }
         preMonth = preMonth.concat(currentMonth,nextMonth);
         return preMonth;
-    }
+    };
 
     var calendar = $('.calendar');  //日历的容器div
     var curYear, curMonth;
@@ -553,7 +568,7 @@ $(document).ready(function () {
             }
             else curRow.append('<td>'+curDay+'</td>');
         }
-    }
+    };
 
     $.calUI();
 
@@ -562,16 +577,18 @@ $(document).ready(function () {
         tbody = current.find('tbody');
         current.find('tbody').empty();
         current.children('div').empty();
-    }
+    };
 
 //  DOM结构没有刷新？
-    calendar.on('click','i:first',function () {
+    calendar.on('click','i:first',function (e) {
         $.changeMonth($(this));
         $.calUI(new Date(curYear,curMonth-1,1));
+        e.stopPropagation();
     });
-    calendar.on('click','i:last',function () {
+    calendar.on('click','i:last',function (e) {
         $.changeMonth($(this));
         $.calUI(new Date(curYear,curMonth+1,1));
+        e.stopPropagation();
     });
 
     current.find('tbody').on('click','td', function () {
