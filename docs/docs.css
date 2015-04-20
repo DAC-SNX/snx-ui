@@ -99,10 +99,10 @@ section {
     transition: all 0.3s ease-in-out;
     line-height: 20px;
 }
-#detail .choosed  {
+#detail #det .choosed  {
     border-left-color: #73dcff;
 }
-#detail .choosed a{
+#detail #det .choosed a{
     color: #2dcbff;
 }
 .title {
