@@ -1583,7 +1583,7 @@ label.btn .checkbox-input {
   overflow-y: hidden;
   white-space: nowrap;
 }
-.imgs > img[src] {
+.imgs > .scroll-body {
   height: 30em;
   width: 40em;
 }
@@ -1591,21 +1591,29 @@ label.btn .checkbox-input {
   position: relative;
   height: 30em;
   max-width: 40em;
+  margin: 0 auto;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.images > img[src]:not(.img-choosed) {
+.images > .scroll-body,
+.images > .img-choosed {
   position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.images > .scroll-body > img[src],
+.images > .img-choosed > img[src] {
+  height: 100%;
+  width: 100%;
+}
+.images > .scroll-body:not(.img-choosed) {
   display: none;
   left: 40em;
-  height: 30em;
-  width: 40em;
 }
 .images .img-choosed {
-  position: absolute;
   left: 0;
-  height: 30em;
-  width: 40em;
 }
 .c-slider {
   -webkit-animation: c-image-slider forwards 0.5s;
@@ -1686,6 +1694,70 @@ label.btn .checkbox-input {
   to {
     left: 0;
   }
+}
+.imgscroll-left,
+.imgscroll-right {
+  position: absolute;
+  height: 30em;
+  width: 5em;
+  line-height: 30em;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.imgscroll-left:hover,
+.imgscroll-right:hover {
+  width: 3em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.imgscroll-left:after,
+.imgscroll-right:after {
+  content: "";
+  position: absolute;
+  top: 15em;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  border: 6px solid #fff;
+  width: 12px;
+  height: 12px;
+}
+.imgscroll-right {
+  left: 35em;
+  text-align: center;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.imgscroll-right:hover {
+  left: 37em;
+}
+.imgscroll-right:hover:after {
+  left: .9em;
+}
+.imgscroll-right:after {
+  content: "";
+  left: 2em;
+  border-left: none;
+  border-top: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.imgscroll-left {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+.imgscroll-left:hover:after {
+  right: .9em;
+}
+.imgscroll-left:after {
+  right: 2em;
+  border-right: none;
+  border-top: none;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .label {
@@ -2095,14 +2167,28 @@ label.btn .checkbox-input {
 .nav-vertical > ul > li a:hover,
 .nav-vertical > ul > li a:active,
 .nav-vertical > ul > li a:focus {
+  color: #fff;
   border-left: 10px solid #73dcff;
   padding-left: 1.6em;
   padding-right: 1.4em;
+  text-shadow: 0 0 22px rgba(0, 0, 0, 0.5);
 }
 .nav-vertical > ul > li.disabled > a {
   padding-left: 1em;
   padding-right: 2em;
   border-left: 0;
+  text-shadow: none;
+}
+.nav-vertical.nav-yl > ul > li a:hover,
+.nav-vertical.nav-yl > ul > li a:active,
+.nav-vertical.nav-yl > ul > li a:focus {
+  color: #000;
+  text-shadow: none;
+}
+.nav-vertical.nav-yl > ul > li.disabled > a:hover,
+.nav-vertical.nav-yl > ul > li.disabled > a:active,
+.nav-vertical.nav-yl > ul > li.disabled > a:focus {
+  color: #c0c0c0;
 }
 .nav-skyblue > ul {
   background-color: #73dcff;

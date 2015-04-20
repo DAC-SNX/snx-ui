@@ -171,7 +171,7 @@ $(document).ready(function(){
                 pgnChoosed: 1,  //默认选中的页码
                 leftButton: '.pgn-pre', //向左的按钮
                 rightButton: '.pgn-next', //向右的按钮
-                autoPlay: 'false', //自动播放
+                autoPlay: false, //自动播放
                 timeCircle: 5000 //自动播放的时间
             };
             var settings = $.extend(defaults, options);
@@ -184,14 +184,14 @@ $(document).ready(function(){
             var $this = $(this);
             var imgs = [];
             var i = 0, flag = 0, imgChoosed;
-            $(this).find('img[src]').each(function () {
+            $(this).find('.scroll-body').each(function () {
                 imgs[i] = $(this);
                 i++;
             });
 
             function rightToLeft(){
                 imgChoosed = $this.find('.img-choosed');
-                flag = imgChoosed.closest('img[src]').index();
+                flag = imgChoosed.closest('.scroll-body').index();
                 if(flag+1 === imgs.length) flag = -1;
                 imgChoosed.addClass('c-slider');
                 $(imgs[flag+1]).show().addClass('u-slider');
@@ -202,7 +202,7 @@ $(document).ready(function(){
             }
             function leftToRight(){
                 imgChoosed = $this.find('.img-choosed');
-                flag = imgChoosed.closest('img[src]').index();
+                flag = imgChoosed.closest('.scroll-body').index();
                 if(flag+1 === imgs.length) flag = -1;
                 imgChoosed.addClass('c-l-slider');
                 $(imgs[flag+1]).show().addClass('u-l-slider');
@@ -211,7 +211,13 @@ $(document).ready(function(){
                     $(imgs[flag+1]).removeClass('u-l-slider').addClass('img-choosed');
                 },500);
             }
-
+            function auto(){
+                if(settings.autoPlay){
+                    setInterval(function(){
+                        leftToRight();
+                    },6000);
+                }
+            }
             return this.each(function () {
                 var startX,endX;
                 var type = 'mobile';
@@ -245,6 +251,7 @@ $(document).ready(function(){
                 $(settings.rightButton).bind('click', function () {
                     leftToRight();
                 });
+                auto();
             });
         },
         stop: function (options) {

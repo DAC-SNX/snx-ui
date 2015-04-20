@@ -170,20 +170,43 @@
         &:hover,
         &:active,
         &:focus{
-          border-left:10px solid #73dcff;
+          color: #fff;
+          border-left: 10px solid #73dcff;
           padding-left: 1.6em;
           padding-right: 1.4em;
+          text-shadow:  0 0 22px rgba(0,0,0,.5);
         }
       }
       &.disabled > a{
         padding-left: 1em;
         padding-right: 2em;
         border-left: 0;
+        text-shadow: none;
       }
     }
   }
 }
-
+.nav-vertical.nav-yl{
+  >ul{
+    >li{
+      a{
+        &:hover,
+        &:active,
+        &:focus{
+          color: #000;
+          text-shadow: none;
+        }
+        }
+      &.disabled > a{
+        &:hover,
+        &:active,
+        &:focus{
+          color: #c0c0c0;
+        }
+      }
+    }
+  }
+}
 //颜色系列
 .nav-skyblue{
   >ul{

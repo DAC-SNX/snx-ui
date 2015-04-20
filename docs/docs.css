@@ -287,20 +287,6 @@ section {
 #content .scroll-choosed a {
     color: #000000;
 }
-
-.imgscroll-right {
-    left: 38em;
-}
-
-.imgscroll-left,
-.imgscroll-right {
-    position: absolute;
-    top: 0;
-    height: 30em;
-    width: 2em;
-    background-color: rgba(0,0,0,0.5);
-    line-height: 30em;
-}
 .header {
     margin: 60px auto 0;
     width: 600px;
