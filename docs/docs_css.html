@@ -1960,10 +1960,11 @@
                     <div class="grids-16 yl">
                         <figure class="img-under g-5">
                             <img class="img" src="docs/image/blur.jpg" alt="img">
-                            <p>hihihi</p>
+                            <h2 style="margin-bottom: 10px;font-family: 'Raleway', arial, sans-serif">— Girl Friend —</h2>
+                            <p style="font-family: 'Raleway', arial, sans-serif;font-size: 13px;">Singer：Avril Lavigne</p>
                         </figure>
                         <figure class="g-5">
-                            <img class="img img-circle" src="docs/image/blur.jpg" alt="img">
+                            <img class="img img-circle" src="docs/image/m1.jpg" alt="img">
                         </figure>
                     </div>
                     <button class="code-display btn btn-fl default">Source</button>
@@ -1986,32 +1987,36 @@
                 <div class="block">
                     <h2 class="small-title">图片的hover样式</h2>
                     <p class="description">
-                        鼠标悬浮触发在图片上显示文字的效果，对figure标签添加<kbd>.figure</kbd>类。
+                        鼠标悬浮触发在图片上显示文字的效果，对figure标签添加<kbd>.img-above</kbd>类,并配合使用source中的各标签。
                     </p>
                     <div class="grids-16">
-                        <figure class="img-above g-6">
-                            <img class="img" src="docs/image/blur.jpg" alt="img">
-                            <div>2012/2/2</div>
-                        </figure>
-                        <figure class="img-above g-6">
-                            <img class="img" src="docs/image/blur.jpg" alt="img">
-                            <div>走过路过千万不要错过啊啊啊啊啊</div>
-                        </figure>
+                        <div class="g-12" style="margin: 1em auto">
+                            <figure class="img-above">
+                                <img src="docs/image/blur.jpg" alt="img14">
+                                <figcaption>
+                                    <h2 style="font-family: 'Raleway', arial, sans-serif">Collie <span style="font-family: arial, sans-serif;font-weight: 600">UI Framework</span></h2>
+                                    <span><i class="fa fa-heart-o"></i></span>
+                                    <span><i class="fa fa-thumbs-o-up"></i></span>
+                                    <span><i class="fa fa-paperclip"></i></span>
+                                    <p style="font-family: 'Raleway', arial, sans-serif;">Using the Collie UI will help you to find a easy way to build your amazing website.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
                     <button class="code-display btn btn-fl default">Source</button>
                 </div>
                 <pre class="code">
                     <code class="html">
-    &lt;div class="grids-16"&gt;
-        &lt;figure class="img-above g-6"&gt;
-            &lt;img class="img" src="../image/blur.jpg" alt="img"&gt;
-            &lt;div&gt;2012/2/2&lt;/div&gt;
-        &lt;/figure&gt;
-        &lt;figure class="img-above g-6"&gt;
-            &lt;img class="img" src="../image/blur.jpg" alt="img"&gt;
-            &lt;div&gt;走过路过千万不要错过啊啊啊啊啊&lt;/div&gt;
-        &lt;/figure&gt;
-    &lt;/div&gt;
+    &lt;figure class="img-above"&gt;
+        &lt;img src="docs/image/blur.jpg" alt="img14"&gt;
+        &lt;figcaption&gt;
+            &lt;h2&gt;UI Framework&lt;/span&gt;&lt;/h2&gt;
+            &lt;span&gt;&lt;i class="fa fa-heart-o"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;i class="fa fa-thumbs-o-up"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;span&gt;&lt;i class="fa fa-paperclip"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;p&gt;Using the Collie UI will help you to find a easy way to build your amazing website.&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
                     </code>
                 </pre>
             </div>
