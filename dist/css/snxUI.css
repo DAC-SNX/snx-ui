@@ -2138,13 +2138,17 @@ figure.img-above:hover figcaption > span:nth-child(2) {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.nav > ul > li > a:active,
-.nav > ul > li > a:focus {
-  text-decoration: none;
-  box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.25);
-}
 .nav > ul > li > a:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.nav > ul > li > a:active,
+.nav > ul > li > a.active,
+.nav > ul > li > a:active:hover,
+.nav > ul > li > a.active:hover,
+.nav > ul > li > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.16);
 }
 .nav > ul > li.disabled > a {
   cursor: not-allowed;
@@ -2152,6 +2156,7 @@ figure.img-above:hover figcaption > span:nth-child(2) {
 }
 .nav > ul > li.disabled > a:hover,
 .nav > ul > li.disabled > a:active,
+.nav > ul > li.disabled > a.active,
 .nav > ul > li.disabled > a:focus {
   color: #c0c0c0 ;
   text-decoration: none;
@@ -2213,10 +2218,12 @@ figure.img-above:hover figcaption > span:nth-child(2) {
   transition: all .3s;
 }
 .nav-yl > ul > li > a:active,
+.nav-yl > ul > li > a.active,
+.nav-yl > ul > li > a:active:hover,
+.nav-yl > ul > li > a.active:hover,
 .nav-yl > ul > li > a:focus {
-  text-decoration: none;
   color: #434343;
-  background-color: white;
+  background-color: #fff;
 }
 .nav-yl > ul > li.disabled > a {
   cursor: not-allowed;
@@ -2224,6 +2231,7 @@ figure.img-above:hover figcaption > span:nth-child(2) {
 }
 .nav-yl > ul > li.disabled > a:hover,
 .nav-yl > ul > li.disabled > a:active,
+.nav-yl > ul > li.disabled > a.active,
 .nav-yl > ul > li.disabled > a:focus {
   color: #c0c0c0 ;
   text-decoration: none;
@@ -2255,29 +2263,16 @@ figure.img-above:hover figcaption > span:nth-child(2) {
 }
 .nav-vertical > ul > li a:hover,
 .nav-vertical > ul > li a:active,
+.nav-vertical > ul > li a.active,
 .nav-vertical > ul > li a:focus {
-  color: #fff;
   border-left: 10px solid #73dcff;
   padding-left: 1.6em;
   padding-right: 1.4em;
-  text-shadow: 0 0 22px rgba(0, 0, 0, 0.5);
 }
 .nav-vertical > ul > li.disabled > a {
   padding-left: 1em;
   padding-right: 2em;
   border-left: 0;
-  text-shadow: none;
-}
-.nav-vertical.nav-yl > ul > li a:hover,
-.nav-vertical.nav-yl > ul > li a:active,
-.nav-vertical.nav-yl > ul > li a:focus {
-  color: #000;
-  text-shadow: none;
-}
-.nav-vertical.nav-yl > ul > li.disabled > a:hover,
-.nav-vertical.nav-yl > ul > li.disabled > a:active,
-.nav-vertical.nav-yl > ul > li.disabled > a:focus {
-  color: #c0c0c0;
 }
 .nav-skyblue > ul {
   background-color: #73dcff;
@@ -2301,6 +2296,9 @@ figure.img-above:hover figcaption > span:nth-child(2) {
   background-color: #555;
 }
 .nav-black > ul > li > a:active,
+.nav-black > ul > li > a.active,
+.nav-black > ul > li > a:active:hover,
+.nav-black > ul > li > a.active:hover,
 .nav-black > ul > li > a:focus {
   text-decoration: none;
 }
@@ -2318,6 +2316,9 @@ figure.img-above:hover figcaption > span:nth-child(2) {
 .nav-skyblue > ul > li.disabled > a:active,
 .nav-green > ul > li.disabled > a:active,
 .nav-black > ul > li.disabled > a:active,
+.nav-skyblue > ul > li.disabled > a.active,
+.nav-green > ul > li.disabled > a.active,
+.nav-black > ul > li.disabled > a.active,
 .nav-skyblue > ul > li.disabled > a:focus,
 .nav-green > ul > li.disabled > a:focus,
 .nav-black > ul > li.disabled > a:focus {
@@ -2341,6 +2342,7 @@ figure.img-above:hover figcaption > span:nth-child(2) {
   text-decoration: underline;
 }
 .nav-path > ol > li > a:active,
+.nav-path > ol > li > a.active,
 .nav-path > ol > li > a:focus {
   color: #b0b0b0;
   text-decoration: none;
@@ -2358,6 +2360,7 @@ figure.img-above:hover figcaption > span:nth-child(2) {
 }
 .nav-path > ol > li.disabled > a:hover,
 .nav-path > ol > li.disabled > a:active,
+.nav-path > ol > li.disabled > a.active,
 .nav-path > ol > li.disabled > a:focus {
   color: rgba(115, 220, 255, 0.5);
   cursor: not-allowed;
